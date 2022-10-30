@@ -27,7 +27,7 @@ html {
   }
    
 ::-webkit-scrollbar-track {
-    background-color: rgba(99, 99, 99, 0.1);
+    background-color: rgba(99, 99, 99, 0.0);
     border-radius: 10px;
   }
    
@@ -168,8 +168,9 @@ nav img {
 
 /* --------------Page 2------- */
 section{
-    height: 100vh;
+    
     width: 100vw;
+    flex-wrap: wrap;
 }
 /* .page2 img{
     display: flex;
@@ -185,9 +186,11 @@ section{
     font-size: 22px;
 } */
 .page2 h2{
+    color: rgb(255, 209, 5);
     font-size: 45px;
     text-align: center;
     padding-top: 130px;
+    padding-bottom: 60px;
 }
 .page2 .description{
     padding: 180px 100px 0 100px;;
@@ -196,27 +199,32 @@ section{
     font-size: 16px;
 }
 .feature_zone{
-    padding-top: 120px;
+    
+    padding-top: 10px;
     width: 90vw;
-    margin: auto
+    margin: 0 5vw 0 5vw;
 }
 .feature{
     margin: 0 50px 0 50px;
     width: 18%;
-    height: 400px;
+    height: 500px;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: auto;
     border-radius: 10px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: .2s;
 }
 .feature:hover{
-    background: linear-gradient(rgba(255, 255, 255, 0.253),rgba(182, 182, 182, 0.295));
-    transition: .2s;
-    
+    transform:translateY(-10%);
+    height: 500px;
+    /* overflow-y: scroll; */
 }
+
 .feature img{
     display: flex;
     margin: auto;
-    width: 150px;
+    width: 80%;
 }
 .feature h3{
     font-size: 110%;
@@ -225,11 +233,65 @@ section{
 .feature p{
     font-size: 80%;
     text-align: center;
-    padding: 0 50px 0 50px;
+    padding: 0 10px 0 10px;
+    opacity: 0;
+    transition: .2s;
+}
+.feature:hover p {
+    opacity: 1;
 }
 
+.discover{
+    height: 100vh;
+    padding: 50px 15vw 0 15vw;
+}
+.discover h1{
+    text-align: center;
+    font-size: 70px;
+    font-weight: 1200;
+}
+.box_zone{
+    /* width: 80%; */
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.box{
+    width: 40%;
+    height: 300px;
+    background: linear-gradient(rgba(0, 183, 255, 0.3),rgb(255, 255, 255,0.0));
+    border-radius: 25px;
+    padding: 50px; 
+}
+.box:nth-child(1){
+    width: 40%;
+    height: 300px;
+    background: linear-gradient(rgba(255, 221, 69, 0.3),rgb(255, 255, 255,0.0));
+    border-radius: 25px;
+    padding: 50px; 
+}
+.box .text1{
+    font-size: 40px;
+    background: -webkit-linear-gradient(-180deg,rgb(255, 230, 0), rgb(255, 72, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.box .text2{
+    font-size: 40px;
+    background: -webkit-linear-gradient(-180deg,rgb(4, 0, 255), rgb(255, 0, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.box p{
+    margin-top: 30px;
+    font-weight: 300;
+}
+.discover img{
 
-
+    display: flex;
+    width: 40%;
+    margin: -10px 35% 0 25%;
+}
 
 
 
@@ -438,134 +500,49 @@ nav .fa {
 }
 
 
-
-
-
-
-
-
-
-
-.card_section {
-    min-width: 30vw;
-    min-height: 100vh;
+.detail_wrap{
     display: flex;
+    flex-direction: row;
+    padding: 10px;
     justify-content: center;
-    align-items: center;
-    font-size: 4ch;
-  }
-  
-  .card{
-      position: relative;
-      width: 600px;
-      height: 450px;
-      /* background-color: #cccccc; */
-      border-radius: 20px;
-      display: flex;
-      /* border-radius: 20px; */
-      transition: .5s;
-  }
-  .card .circle{
-      position: absolute;
-      top: 0;
-      left:0;
-      height: 100%;
-      width: 100%;
-      border-radius: 5%;
-      overflow: hidden;
-  }
-  
-  .card .circle::before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #d83133;
-      clip-path: circle(120px at center);
-      transition: .5s;
-  }
-  .card:hover .circle:before{
-      background: #0065c3;
-      background-color: black;
-      clip-path: circle(400px at center);
-  }
-  .card img{
-      position: absolute;
-      top:50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      height: 250px;
-      pointer-events: none;
-      transition: .5s;
-      border-radius: 200px;
-  }
-  
-  .card:hover img{
-      left: 72%;
-      height: 300px;
-      border-radius: 20px;
-  }
-  
-  .card .content{
-      position: relative;
-      width: 50%;
-      left: 20%;
-      padding: 20px 55% 20px 40px;
-      transition: .5s;
-      opacity: 0;
-      visibility: hidden;
-      
-  }
-  
-  .card:hover .content{
-      left: 0;
-      opacity: 1;
-      visibility: visible;
-      justify-content: center;
-  }
-  .card .content h2{
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 30px;
-      line-height: 1em;
-      margin-bottom: 5px;
-  }
-  .card .content p{
-      font-size: 12px;
-      color: #fff;
-  
-  }
-  .card .content a{
-      position: relative;
-      color: #111;
-      padding: 5% 10%;
-      border-radius: 10px;
-      background-color: #fff;
-      text-decoration: none;
-      margin-top: 10px;
-      display: inline-block;
-      font-weight: 300px;
-      font-size: 30%;
-      
-  }
-  .card .content a:hover{
-    position: relative;
-    color: #fff;
-    padding: 5% 10%;
-    border-radius: 10px;
-    background-color: rgb(37, 37, 37);
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-block;
-    font-weight: 300px;
-    font-size: 30%;
-    transition: .3s;
 }
 
+.detail_wrap .right{
+     display: flex; 
+     flex-direction: column;
+     padding: 10px;
+     margin-top: 150px;
+     margin-left: 100px;
+     width: 20%;
+     height: 100vh;
+ } 
 
+.name{
+    color: blueviolet;
+ }
 
+ .detail_wrap .right img{
+    width: 150px;
+    border-radius: 20px;
+ }
+ .detail_wrap .left img{
+    width: 500px;
+    border-radius: 200px;
+ }
+ .detail_wrap .right .text2_1{
+    font-size: 60px;
+    font-weight: 1000;
+    background: -webkit-linear-gradient(-120deg,rgb(0, 238, 255), rgb(55, 0, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+ .detail_wrap .right .text2_2{
+    font-size: 60px;
+    font-weight: 1000;
+    background: -webkit-linear-gradient(-180deg,rgb(119, 0, 255), rgb(255, 81, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
 
 
 
@@ -639,7 +616,7 @@ nav .fa {
 }
 
 
-
+/* -------------------------Download-------------------------- */
 
 .download_info{
     width: 60vw;

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <title>Thousand Years</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="animation08">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- Background -->
+
+    <div class="area" >
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+</div >
+	
+	<div class="container">
+		<h1 class="label">Log in to Blockman GO</h1>
+		<form class="login_form" action="index.html" method="post" name="form" onsubmit="return validated()">
+			
+			<input autocomplete="off" class="question" type="email" name="email" placeholder="Please enter email"min="1"
+			max="100" autofocus>
+			<div id="email_error">Please fill up your Email </div>
+			
+			<input type="password"  class="question" name="password" placeholder="Please enter your password" min="8">
+			<div id="pass_error">Please fill up your Password</div>
+			<a href="/" class='forgot' >Forgot password?</a>
+			<a href="index.html" type="submit" class="button">Login</a>
+			
+		</form>
+	</div>	
+
+	
+	<script src="login.js"></script>
+</body>
+</html>

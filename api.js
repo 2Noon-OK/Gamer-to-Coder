@@ -9,10 +9,10 @@ fetch("https://gamertocoder.garena.co.th/api/minigames")
   if (typeof data == "number") {
     alert(data);
   } else {
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < 2; i++) {
       const currentData = data[i];
       const newListItem = document.createElement("li");
-      newListItem.classList.add(".card_section");
+      newListItem.classList.add("card");
       const genre_array = currentData.genre;
       let genre_string = genre_array[0];
       if (genre_array.length > 1) {
@@ -21,18 +21,15 @@ fetch("https://gamertocoder.garena.co.th/api/minigames")
         }
       }
       const html =
-      '<div class="card_section">'
-      +'<div class="card">'
-      +'<div class="circle"> </div>'
-      +'<div class="content">'
-      +'<h2 onclick="changeName(' + currentData.name +')"> ' + currentData.name + '</h2>'
-      +'<p>' + genre_string + '</p>'
-      +'<p>'+ currentData.description + '</p>'
-      +'<a target:" _blank" href="' + currentData.icon + '">Link</a>'
-      +'</div>'
-      +'<img src="' + currentData.icon + '"/>'
-      +'</div>'
-      +'</div>'
+        // '<div class="name" onclick="changeName(' + currentData.name +')"> ชื่อ: ' + currentData.name + '</div>'
+        
+        +'<div class="right">'        
+        + '<img src="' + currentData.icon + '"/>'
+        +'<div class="name" onclick="changeName(' + currentData.name +')"> ชื่อ: ' + currentData.name + '</div>'
+        + '<div>ประเภท: ' + genre_string + '</div>'
+        + '<div class="detail">' + currentData.description + '</div>'
+        + '<a href="' + currentData.icon + '">link</a>';
+        +'</div>'
       html.trim();
       newListItem.innerHTML = html;
       document.getElementById("list").appendChild(newListItem);

@@ -41,7 +41,7 @@ nav {
     padding: 2%, 6%;
     justify-content: space-between;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 30px;
     padding-left: 10%;
     padding-right: 6%;
 }
@@ -114,7 +114,9 @@ nav .fa {
     color: white;
 }
 .main-info {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin-top: 30px;
   }
   
@@ -165,12 +167,11 @@ nav .fa {
   
   .main_img {
     width: 50%;
-    display: inline-block;
-    position: absolute;
   }
   .main_img img{
+    display: flex;
+    margin: auto;
     width: 90%;
-    position: absolute;
   }
 
 /* --------------Page 2------- */
@@ -210,13 +211,14 @@ section{
     padding-top: 10px;
     width: 90vw;
     margin: 0 5vw 0 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .feature{
-    margin: 0 50px 0 50px;
+    margin: 0 10px 0 10px;
     width: 18%;
     height: 500px;
-    display: inline-block;
-    vertical-align: auto;
     border-radius: 10px;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -249,8 +251,8 @@ section{
 }
 
 .discover{
-    height: 100vh;
-    padding: 50px 15vw 0 15vw;
+    height: fit-content;
+    padding: 50px 15vw 120px 15vw;
 }
 .discover h1{
     text-align: center;
@@ -625,7 +627,66 @@ section{
 
 
 
+/* ---------------Games--------------- */
+.game_list{
+    overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 60%;
+  display: flex;
+  margin: auto;
+  margin-top: 120px;
+  margin-bottom: 200px;
+ }
+.game_card{
+    display: inline-block;
+    max-width: 200px;
+    height: 220px;
+    /* background-color: #dcdcdc; */
+    /* border: 1px solid black; */
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    /* overflow-x: scroll; */
+}
 
+.game_card .name{
+    /* padding-top: 20px; */
+    font-size: 20px;
+    margin-top: 0;
+    padding-top: 10px;
+
+}
+
+.game_card img{
+    display: flex;
+    margin: auto;
+    width: 150px;
+    border-radius: 20px;
+    transition: .4s;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+}
+
+.sd-img{
+    width: 150px;
+    height: 150px;
+    color: black;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+}
+
+.sd-img:hover{
+   opacity: 1;
+}
 
 
 
@@ -813,6 +874,9 @@ footer a{
         padding-right: 0%;
 
     }
+    .main-info{
+        display: block;
+    }
     .main-info .main-text{
         display: block;
         width: 100%;
@@ -820,11 +884,13 @@ footer a{
     }
     .main_img{
         text-align: center;
+        justify-content: center;
+        width: 100%;
     }
     .main_img img{
-        position: relative;
         display: flex;
-        width: 500px;
+        width:80%;
+        margin: auto;
         
     }
     .main-info .main-text h1{
@@ -916,5 +982,8 @@ footer a{
     .feature_zone .feature img{
         width: 30%;
         
+    }
+    .feature_zone{
+        display: block;
     }
 }
